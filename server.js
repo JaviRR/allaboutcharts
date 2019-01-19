@@ -8,6 +8,8 @@ var mongoose = require("mongoose");
 app.use(bodyParser.json());
 //Mongoose
 mongoose.connect("mongodb://localhost/charts");
+//Use static
+app.use(express.static(__dirname+'/public/dist/public'));
 
 app.listen(8000, function(){
     console.log("Listening on port 8000");
